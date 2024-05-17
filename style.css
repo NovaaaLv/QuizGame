@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+:root {
+  --bg: #f9fffe;
+  --bg-card: #fdfdff;
+  --color: #292525;
+}
+
+body {
+  background-color: var(--bg);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins";
+}
+
+.attechment-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 200px;
+  height: 250px;
+  perspective: 1000px;
+}
+
+.img-card {
+  width: 200px;
+  height: 250px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 1.5s;
+  transform-style: preserve-3d;
+  box-shadow: 0 5px 50px 0 rgb(209, 209, 209);
+  transform: rotateY(0) translateY(0); /* Ensures initial state is properly set */
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(540deg) translateY(-50px);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: var(--bg-card);
+  color: var(--color);
+}
+
+.flip-card-back {
+  background-color: var(--bg-card);
+  color: var(--color);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 5px 10px;
+  justify-content: center;
+  gap: 10px;
+  transform: rotateY(180deg);
+}
+
+.title-atc {
+  font-weight: 900;
+  font-size: 17px;
+}
+
+.desk-atc {
+  max-width: 150px;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.img-card-back {
+  width: 60px;
+  height: 60px;
+  object-position: center;
+  object-fit: cover;
+  border-radius: 100%;
+}
+
+.desk-card-back {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+/*  */
+#quiz-container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+.btn-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 5px 0;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
