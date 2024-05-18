@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JungleRpl</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            font-family: 'Arial', sans-serif;
+            color: white;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .start-button {
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #ff6f61;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .start-button:hover {
+            background-color: #ff3f31;
+            transform: scale(1.05);
+        }
+        .start-button:active {
+            background-color: #e63946;
+        }
+    </style>
+</head>
+<body>
+    <h1>JungleRpl</h1>
+    <br><br><br><br><br><br>
+    <button class="start-button" onclick="navigateToPage()">Start</button>
+
+    <script>
+        function navigateToPage() {
+            window.location.href = 'game.html';
+        }
+    </script>
+</body>
+</html>
