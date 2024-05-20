@@ -1,0 +1,322 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+:root {
+  --bg: #f9fffe;
+  --bg-card: #fdfdff;
+  --color: #292525;
+
+  --bg-ingame: #09111c;
+  --bg-nav: #0d1927;
+  --nav-content: #1e344c;
+}
+
+body {
+  background-color: var(--bg-ingame);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins";
+}
+
+.attechment-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 200px;
+  height: 250px;
+  perspective: 1000px;
+}
+
+.img-card {
+  width: 200px;
+  height: 250px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 1.5s;
+  transform-style: preserve-3d;
+  box-shadow: 0 5px 50px 0 rgb(209, 209, 209);
+  transform: rotateY(0) translateY(0); /* Ensures initial state is properly set */
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(540deg) translateY(-50px);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: var(--bg-card);
+  color: var(--color);
+}
+
+.flip-card-back {
+  background-color: var(--bg-card);
+  color: var(--color);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 5px 10px;
+  justify-content: center;
+  gap: 10px;
+  transform: rotateY(180deg);
+}
+
+.title-atc {
+  font-weight: 900;
+  font-size: 17px;
+}
+
+.desk-atc {
+  max-width: 150px;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.img-card-back {
+  width: 60px;
+  height: 60px;
+  object-position: center;
+  object-fit: cover;
+  border-radius: 100%;
+}
+
+.desk-card-back {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+/*  */
+/* #quiz-container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+.btn-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 5px 0;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+} */
+/* 
+.quiz-container {
+  width: 100%;
+  padding-top: 30px;
+}
+
+.quiz-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.score-container {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.question-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+}
+
+.answer-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  gap: 20px;
+}
+
+.answer-buttons button {
+  padding: 5px 45px;
+}
+
+.heading-quiz {
+  font-weight: 800;
+  font-size: 30px;
+  color: var(--color);
+} */
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  padding: 10px 0px;
+  top: 0px;
+  left: 0;
+  right: 0;
+  background-color: var(--bg-nav);
+  color: white;
+}
+
+.bar-navbar {
+  height: 7px;
+  border-radius: 12px;
+  width: 200px;
+  background: white;
+}
+
+.nav-center {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+  padding-left: 80px;
+}
+
+.bar-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.img-nav {
+  width: 40px;
+  height: 40px;
+  object-position: center;
+  object-fit: cover;
+  border-radius: 100%;
+}
+
+.strike,
+.score,
+.soal,
+.timer {
+  font-weight: 800;
+  font-size: 15px;
+  background: var(--nav-content);
+  padding: 2px 15px;
+  border-radius: 12px;
+}
+
+.nav-left {
+  display: flex;
+  gap: 20px;
+}
+
+.main-game {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  gap: 100px;
+}
+
+#question-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game-container {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+#question {
+  font-weight: 800;
+  font-size: 30px;
+}
+
+.answerrr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.ch-answer-desk {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.btn-container .btn {
+  min-width: 280px;
+  min-height: 280px;
+  border: none;
+  color: white;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-container {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1200px;
+}
+
+.btn-1 {
+  background-color: rgb(209, 62, 62);
+}
+
+.btn-2 {
+  background-color: rgb(45, 160, 45);
+}
+.btn-3 {
+  background-color: rgb(53, 53, 175);
+}
+
+.btn-4 {
+  background-color: rgb(204, 204, 55);
+}
