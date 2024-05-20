@@ -60,9 +60,12 @@ function setNextQuestion() {
 // Fungsi untuk menampilkan pertanyaan dan jawaban
 function showQuestion(question) {
   const colors = ["btn-1", "btn-2", "btn-3", "btn-4"];
-
   questionElement.innerText = question.question; // Menampilkan teks pertanyaan
-  question.answers.forEach((answer, index) => { // Untuk setiap jawaban
+
+  // Mengacak urutan jawaban sebelum menampilkannya
+  const shuffledAnswers = shuffle(question.answers);
+
+  shuffledAnswers.forEach((answer, index) => { // Untuk setiap jawaban
     const button = document.createElement("button"); // Membuat elemen tombol
     button.innerText = answer.text; // Menetapkan teks tombol
     button.classList.add("btn"); // Menambahkan kelas CSS ke tombol
@@ -75,6 +78,7 @@ function showQuestion(question) {
     answerButtonsElement.appendChild(button); // Menambahkan tombol ke elemen jawaban
   });
 }
+
 
 // Fungsi untuk menghapus tombol jawaban sebelumnya
 function resetState() {
@@ -136,11 +140,13 @@ function selectAnswer(e) {
       icon: 'info',
       showCancelButton: true,
       confirmButtonText: 'Play Again',
-      cancelButtonText: 'Exit'
     }).then((result) => {
       gameOver = true; // Mengatur status permainan menjadi selesai
       if (result.isConfirmed) { // Jika pemain memilih untuk bermain lagi
         startGame(); // Memulai ulang permainan
+      }
+      else if (result.dismiss === Swal.DismissReason.cancel) { // Jika pemain memilih untuk keluar
+        window.location.href = 'menu.html'; // Alihkan ke halaman menu.html
       }
     });
   }
@@ -148,28 +154,6 @@ function selectAnswer(e) {
 
 // Fungsi untuk menampilkan pilihan lampiran
 function showAttachmentOptions() {
-  // Swal.fire({
-  //   title: 'Choose an Attachment',
-  //   text: 'Select one of the following options:',
-  //   input: 'radio',
-  //   inputOptions: {
-  //     scoreMultiplier: 'Double Points for Next Question',
-  //     pointProtection: 'Protect Your Points from Deduction',
-  //     timeExtension: 'Add 30 Seconds to Timer'
-  //   },
-  //   inputValidator: (value) => {
-  //     if (!value) {
-  //       return 'You need to choose something!'
-  //     }
-  //   },
-  //   showCancelButton: true,
-  //   confirmButtonText: 'Confirm'
-  // }).then((result) => {
-  //   if (result.isConfirmed) {
-  //     applyAttachment(result.value);
-  //   }
-  // });
-
   attachmentContainer.classList.remove('none')
   gameContainer.classList.add('none')
 }
@@ -201,46 +185,6 @@ function ApplyAttachmentTime() {
   gameContainer.classList.remove('none')
 }
 
-// Fungsi untuk menerapkan lampiran
-// function applyAttachment(attachment) {
-//   switch (attachment) {
-//     case 'scoreMultiplier':
-//       scoreMultiplier = 2;
-//       Swal.fire({
-//         icon: 'info',
-//         title: 'Score Multiplier Activated!',
-//         text: 'The next question will have double points!',
-//         showConfirmButton: false,
-//         timer: 2000
-//       });
-//       break;
-//     case 'pointProtection':
-//       scoreMultiplier = 1; // Reset multiplier
-//       consecutiveCorrectAnswers = Math.max(consecutiveCorrectAnswers, 1); // Set minimal correct streak to 1
-//       Swal.fire({
-//         icon: 'info',
-//         title: 'Point Protection Activated!',
-//         text: 'Your points will not be deducted for the next question!',
-//         showConfirmButton: false,
-//         timer: 2000
-//       });
-//       break;
-//     case 'timeExtension':
-//       timeLeft += 30;
-//       timerElement.innerText = `Time: ${timeLeft}`;
-//       Swal.fire({
-//         icon: 'info',
-//         title: 'Time Extension Activated!',
-//         text: '30 seconds have been added to the timer!',
-//         showConfirmButton: false,
-//         timer: 2000
-//       });
-//       break;
-//     default:
-//       break;
-//   }
-// }
-
 // Fungsi untuk mengakhiri permainan
 function endGame() {
   gameOver = true; // Mengatur status permainan menjadi selesai
@@ -261,7 +205,7 @@ function endGame() {
   });
 }
 
-// Fungsi untuk mengacak array (digunakan untuk mengacak pertanyaan)
+// Fungsi untuk mengacak array (digunakan untuk mengacak pertanyaan dan jawaban)
 function shuffle(array) {
   let currentIndex = array.length, temporaryValue, randomIndex;
   while (0 !== currentIndex) { // Selama masih ada elemen untuk diacak
