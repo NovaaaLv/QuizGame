@@ -154,6 +154,13 @@ function selectAnswer(e) {
 
 // Fungsi untuk menampilkan pilihan lampiran
 function showAttachmentOptions() {
+  Swal.fire({
+    icon: 'info',
+    title: 'Chosee Your Power Up !',
+    text: 'The next question will have Power Up',
+    showConfirmButton: false,
+    timer: 2000
+  });
   attachmentContainer.classList.remove('none')
   gameContainer.classList.add('none')
 }
