@@ -38,7 +38,7 @@ const questions = [
       { text: "fitnah", correct: true },
       { text: "pembunuhan massal", correct: false }
     ]
-  },
+  },// Ghiyas Tsaqif
   {
     question: "5. Pengambilan keputusan menurut demokrasi Pancasila lebih mengutamakan ....",
     answers: [
