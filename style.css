@@ -339,3 +339,11 @@ body {
     display: none;
   }
 }
+
+.none {
+  display: none;
+}
+
+.block {
+  display: block;
+}

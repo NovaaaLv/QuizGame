@@ -31,7 +31,7 @@
       </nav>
     </header>
 
-    <section class="game-container">
+    <section class="game-container" id="game-container">
       <div class="main-game">
         <div id="question-container">
           <span id="question"></span>
@@ -48,6 +48,39 @@
       </div>
     </section>
     <button id="end-game-button">End Game</button>
+
+    <div class="attechment-container none" id="atc-container">
+      <div class="flip-card" onclick="ApplyAttachmentScore()">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="assets/alialdoo.png" alt="" class="img-card" />
+          </div>
+          <div class="flip-card-back">
+            <img src="assets/alialdoo.png" alt="" class="img-card-back" />
+            <div class="desk-card-back">
+              <span class="title-atc">SCORE 2X !</span>
+              <span class="desk-atc"
+                >Mengkalikan Score 2 Kali Lipat Pada Pertanyaan Berikutnya</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card" onclick="ApplyAttachmentTime()">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="assets/alialdoo.png" alt="" class="img-card" />
+          </div>
+          <div class="flip-card-back">
+            <img src="assets/alialdoo.png" alt="" class="img-card-back" />
+            <div class="desk-card-back">
+              <span class="title-atc">Tambah Waktu !</span>
+              <span class="desk-atc">Menambahkan waktu 30 detik</span>
+            </div>
+          </div>
+        </div>
+      </div>
 
     <!-- script -->
     <script src="questions.js"></script>

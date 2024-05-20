@@ -13,7 +13,10 @@ const scoreElement = document.getElementById("score");
 const timerElement = document.getElementById("timer");
 const endGameButton = document.getElementById("end-game-button");
 const questionCountElement = document.getElementById("question-count");
-const consecutiveCorrectElement = document.getElementById("consecutive-correct"); // Menambahkan elemen baru
+const consecutiveCorrectElement = document.getElementById
+  ("consecutive-correct"); // Menambahkan elemen baru
+const attachmentContainer = document.getElementById("atc-container")
+const gameContainer = document.getElementById('game-container')
 
 startGame(); // Memulai permainan saat halaman dimuat
 
@@ -145,68 +148,98 @@ function selectAnswer(e) {
 
 // Fungsi untuk menampilkan pilihan lampiran
 function showAttachmentOptions() {
+  // Swal.fire({
+  //   title: 'Choose an Attachment',
+  //   text: 'Select one of the following options:',
+  //   input: 'radio',
+  //   inputOptions: {
+  //     scoreMultiplier: 'Double Points for Next Question',
+  //     pointProtection: 'Protect Your Points from Deduction',
+  //     timeExtension: 'Add 30 Seconds to Timer'
+  //   },
+  //   inputValidator: (value) => {
+  //     if (!value) {
+  //       return 'You need to choose something!'
+  //     }
+  //   },
+  //   showCancelButton: true,
+  //   confirmButtonText: 'Confirm'
+  // }).then((result) => {
+  //   if (result.isConfirmed) {
+  //     applyAttachment(result.value);
+  //   }
+  // });
+
+  attachmentContainer.classList.remove('none')
+  gameContainer.classList.add('none')
+}
+
+function ApplyAttachmentScore() {
+  scoreMultiplier = 2;
   Swal.fire({
-    title: 'Choose an Attachment',
-    text: 'Select one of the following options:',
-    input: 'radio',
-    inputOptions: {
-      scoreMultiplier: 'Double Points for Next Question',
-      pointProtection: 'Protect Your Points from Deduction',
-      timeExtension: 'Add 30 Seconds to Timer'
-    },
-    inputValidator: (value) => {
-      if (!value) {
-        return 'You need to choose something!'
-      }
-    },
-    showCancelButton: true,
-    confirmButtonText: 'Confirm'
-  }).then((result) => {
-    if (result.isConfirmed) {
-      applyAttachment(result.value);
-    }
+    icon: 'info',
+    title: 'Score Multiplier Activated!',
+    text: 'The next question will have double points!',
+    showConfirmButton: false,
+    timer: 2000
   });
+  attachmentContainer.classList.add('none')
+  gameContainer.classList.remove('none')
+}
+
+function ApplyAttachmentTime() {
+  timeLeft += 30;
+  timerElement.innerText = `Time: ${timeLeft}`;
+  Swal.fire({
+    icon: 'info',
+    title: 'Time Extension Activated!',
+    text: '30 seconds have been added to the timer!',
+    showConfirmButton: false,
+    timer: 2000
+  });
+  attachmentContainer.classList.add('none')
+  gameContainer.classList.remove('none')
 }
 
 // Fungsi untuk menerapkan lampiran
-function applyAttachment(attachment) {
-  switch (attachment) {
-    case 'scoreMultiplier':
-      scoreMultiplier = 2;
-      Swal.fire({
-        icon: 'info',
-        title: 'Score Multiplier Activated!',
-        text: 'The next question will have double points!',
-        showConfirmButton: false,
-        timer: 2000
-      });
-      break;
-    case 'pointProtection':
-      scoreMultiplier = 1; // Reset multiplier
-      consecutiveCorrectAnswers = Math.max(consecutiveCorrectAnswers, 1); // Set minimal correct streak to 1
-      Swal.fire({
-        icon: 'info',
-        title: 'Point Protection Activated!',
-        text: 'Your points will not be deducted for the next question!',
-        showConfirmButton: false,
-        timer: 2000
-      });
-      break;
-    case 'timeExtension':
-      timeLeft += 30;
-      timerElement.innerText = `Time: ${timeLeft}`;
-      Swal.fire({
-        icon: 'info',
-        title: 'Time Extension Activated!',
-        text: '30 seconds have been added to the timer!',
-        showConfirmButton: false,
-        timer: 2000
-      });
-      break;
-    default:
-      break;
-  }
-}
+// function applyAttachment(attachment) {
+//   switch (attachment) {
+//     case 'scoreMultiplier':
+//       scoreMultiplier = 2;
+//       Swal.fire({
+//         icon: 'info',
+//         title: 'Score Multiplier Activated!',
+//         text: 'The next question will have double points!',
+//         showConfirmButton: false,
+//         timer: 2000
+//       });
+//       break;
+//     case 'pointProtection':
+//       scoreMultiplier = 1; // Reset multiplier
+//       consecutiveCorrectAnswers = Math.max(consecutiveCorrectAnswers, 1); // Set minimal correct streak to 1
+//       Swal.fire({
+//         icon: 'info',
+//         title: 'Point Protection Activated!',
+//         text: 'Your points will not be deducted for the next question!',
+//         showConfirmButton: false,
+//         timer: 2000
+//       });
+//       break;
+//     case 'timeExtension':
+//       timeLeft += 30;
+//       timerElement.innerText = `Time: ${timeLeft}`;
+//       Swal.fire({
+//         icon: 'info',
+//         title: 'Time Extension Activated!',
+//         text: '30 seconds have been added to the timer!',
+//         showConfirmButton: false,
+//         timer: 2000
+//       });
+//       break;
+//     default:
+//       break;
+//   }
+// }
 
 // Fungsi untuk mengakhiri permainan
 function endGame() {
