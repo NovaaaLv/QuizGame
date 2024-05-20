@@ -18,7 +18,7 @@ const questions = [
     ]
   },
   {
-    question: "What is the capital of Japan?",
+    question: "What is the capital of Japannn?",
     answers: [
       { text: "Tokyo", correct: true },
       { text: "Seoul", correct: false },
