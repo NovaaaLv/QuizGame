@@ -9,7 +9,7 @@
   </head>
   <body>
     <!--  -->
-    <div id="quiz-container">
+    <!-- <div id="quiz-container">
       <h1>Quiz Game</h1>
       <div id="question-container">
         <p id="question"></p>
@@ -25,78 +25,67 @@
         <p>Score: <span id="score">0</span></p>
         <button id="end-game-button">End Game</button>
       </div>
-    </div>
+    </div> -->
 
-    <!-- attachment Buff -->
-    <div class="attechment-container">
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img src="assets/alialdoo.png" alt="" class="img-card" />
-          </div>
-          <div class="flip-card-back">
-            <img src="assets/alialdoo.png" alt="" class="img-card-back" />
-            <div class="desk-card-back">
-              <span class="title-atc">SCORE 3X !</span>
-              <span class="desk-atc"
-                >Mengkalikan Score 3 Kali Lipat Pada Pertanyaan Berikutnya</span
-              >
-            </div>
+    <!-- <div class="quiz-container">
+      <div class="quiz-wrapper">
+        <span class="heading-quiz">Quiz Game</span>
+        <div class="score-container">
+          <span>Soal Ke :</span>
+          <span>Score :</span>
+        </div>
+        <div class="question-container">
+          <p id="questio">Nama Kamu Siapa</p>
+          <div class="answer-buttons">
+            <button class="btn" id="answer1">Jawaban 1</button>
+            <button class="btn" id="answer2">Jawaban 2</button>
+            <button class="btn" id="answer3">Jawaban 3</button>
+            <button class="btn" id="answer4">Jawaban 4</button>
           </div>
         </div>
       </div>
+    </div> -->
 
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img src="assets/alialdoo.png" alt="" class="img-card" />
+    <header>
+      <nav>
+        <div class="nav-left">
+          <span class="soal" id="question-count">1/20</span>
+          <span class="timer" id="timer">Time: 120</span>
+        </div>
+        <div class="nav-center">
+          <img src="assets/alialdoo.png" class="img-nav" />
+          <div class="bar-container">
+            <div class="bar-navbar"></div>
+            <div class="bar-navbar"></div>
           </div>
-          <div class="flip-card-back">
-            <img src="assets/alialdoo.png" alt="" class="img-card-back" />
-            <div class="desk-card-back">
-              <span class="title-atc">SCORE 3X !</span>
-              <span class="desk-atc"
-                >Mengkalikan Score 3 Kali Lipat Pada Pertanyaan Berikutnya</span
-              >
-            </div>
+          <span class="strike" id="consecutive-correct"
+            >STRIKE :
+            <span class="strike-indx" id="strike-score">20</span></span
+          >
+        </div>
+        <div id="score-container">
+          <span class="score">Score <span id="score">0</span></span>
+        </div>
+      </nav>
+    </header>
+
+    <section class="game-container">
+      <div class="main-game">
+        <div id="question-container">
+          <span id="question"></span>
+        </div>
+        <div class="answerrr">
+          <span class="ch-answer-desk">Pilih Jawaban Yang Benar</span>
+          <div id="answer-buttons" class="btn-container">
+            <button class="btn btn1" id="answer1"></button>
+            <button class="btn btn2" id="answer2"></button>
+            <button class="btn btn3" id="answer3"></button>
+            <button class="btn btn4" id="answer4"></button>
           </div>
         </div>
       </div>
-
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img src="assets/alialdoo.png" alt="" class="img-card" />
-          </div>
-          <div class="flip-card-back">
-            <img src="assets/alialdoo.png" alt="" class="img-card-back" />
-            <div class="desk-card-back">
-              <span class="title-atc">SCORE 3X !</span>
-              <span class="desk-atc"
-                >Mengkalikan Score 3 Kali Lipat Pada Pertanyaan Berikutnya</span
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img src="assets/alialdoo.png" alt="" class="img-card" />
-          </div>
-          <div class="flip-card-back">
-            <img src="assets/alialdoo.png" alt="" class="img-card-back" />
-            <div class="desk-card-back">
-              <span class="title-atc">SCORE 3X !</span>
-              <span class="desk-atc"
-                >Mengkalikan Score 3 Kali Lipat Pada Pertanyaan Berikutnya</span
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    </section>
+    <button id="end-game-button">End Game</button>
 
     <!-- script -->
     <script src="questions.js"></script>
