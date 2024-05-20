@@ -7,7 +7,7 @@
 
   --bg-ingame: #09111c;
   --bg-nav: #0d1927;
-  --nav-content: #1e344c;
+  --nav-content: #1e344;
 }
 
 body {
@@ -128,14 +128,13 @@ nav {
   border-radius: 12px;
   width: 200px;
   background: white;
+  margin-left: 10px;
 }
 
 .nav-center {
   display: flex;
   justify-content: center;
-  gap: 20px;
   align-items: center;
-  padding-left: 80px;
 }
 
 .bar-container {
@@ -208,13 +207,18 @@ nav {
 }
 
 .btn-container .btn {
-  min-width: 280px;
-  min-height: 280px;
+  width: 280px;
+  height: auto;
+  padding: 15px 20px;
+  text-align: left;
   border: none;
   color: white;
   font-size: 17px;
   font-weight: 700;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .btn-container {
@@ -242,9 +246,9 @@ nav {
 
 /* NajStyle */
 
-body{
-  text-align:center;
-  background-color:#09111C;
+body {
+  text-align: center;
+  background-color: #09111c;
 }
 /*space cuma buat ngasih.... space*/
 .space {
@@ -252,60 +256,61 @@ body{
 }
 
 /*TOMBOLNYAHHHH RAHH*/
-.button, .bg {
-  position:relative;
-  display:inline-block;
+.button,
+.bg {
+  position: relative;
+  display: inline-block;
   margin: 20px;
 }
 
 @font-face {
-  font-family: 'doodle';
-  src: url('Blomberg-8MKKZ.otf');
+  font-family: "doodle";
+  src: url("Blomberg-8MKKZ.otf");
 }
 
-.button a{
-  color:white;
-  font-family: 'doodle';
-  font-weight:bold;
-  font-size:36px;
+.button a {
+  color: white;
+  font-family: "doodle";
+  font-weight: bold;
+  font-size: 36px;
   text-align: center;
-  text-decoration:none;
-  background-color:#FFA12B;
-  display:block;
-  position:relative;
-  padding:10px 20px;
-  
+  text-decoration: none;
+  background-color: #ffa12b;
+  display: block;
+  position: relative;
+  padding: 10px 20px;
+
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   text-shadow: 0px 1px 0px #000;
   filter: dropshadow(color=#000, offx=0px, offy=1px);
-  
-  -webkit-box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #915100;
-  -moz-box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #e7b36f;
-  box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #DE4022;
-  
+
+  -webkit-box-shadow: inset 0 1px 0 #ffe5c4, 0 10px 0 #915100;
+  -moz-box-shadow: inset 0 1px 0 #ffe5c4, 0 10px 0 #e7b36f;
+  box-shadow: inset 0 1px 0 #ffe5c4, 0 10px 0 #de4022;
+
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 50px;
 }
 
 /*efek saat dipemcet mazzzz*/
-.button a:active{
-  top:10px;
-  background-color:#F78900;
-  
-  -webkit-box-shadow:inset 0 1px 0 #FFE5C4, inset 0 -3px 0 #915100;
-  -moz-box-shadow:inset 0 1px 0 #FFE5C4, inset 0 -3pxpx 0 #915100;
-  box-shadow:inset 0 1px 0 #FFE5C4, inset 0 -3px 0 #915100;
+.button a:active {
+  top: 10px;
+  background-color: #f78900;
+
+  -webkit-box-shadow: inset 0 1px 0 #ffe5c4, inset 0 -3px 0 #915100;
+  -moz-box-shadow: inset 0 1px 0 #ffe5c4, inset 0 -3pxpx 0 #915100;
+  box-shadow: inset 0 1px 0 #ffe5c4, inset 0 -3px 0 #915100;
 }
 
-.button:after{
-  height:100%;
-  width:100%;
-  padding:4px;
+.button:after {
+  height: 100%;
+  width: 100%;
+  padding: 4px;
   position: absolute;
-  bottom:-15px;
-  left:-4px;
-  z-index:-1; 
+  bottom: -15px;
+  left: -4px;
+  z-index: -1;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
@@ -313,14 +318,24 @@ body{
 
 /*lapisan doangs*/
 .bg-1 {
-  background-color: #0D1925;
+  background-color: #0d1925;
   border-radius: 70px;
 }
 
 .bg-2 {
-  background-color: #1E344C;
+  background-color: #1e344c;
   padding: 5vw 7vh;
   border-radius: 50px;
 }
 
+@media screen and (max-width: 980px) {
+  .bar2 {
+    display: none;
+  }
+}
 
+@media screen and (max-width: 780px) {
+  .bar1 {
+    display: none;
+  }
+}
