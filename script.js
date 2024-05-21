@@ -13,10 +13,11 @@ const scoreElement = document.getElementById("score");
 const timerElement = document.getElementById("timer");
 const endGameButton = document.getElementById("end-game-button");
 const questionCountElement = document.getElementById("question-count");
-const consecutiveCorrectElement = document.getElementById
-  ("consecutive-correct"); // Menambahkan elemen baru
-const attachmentContainer = document.getElementById("atc-container")
-const gameContainer = document.getElementById('game-container')
+const consecutiveCorrectElement = document.getElementById("consecutive-correct"); // Menambahkan elemen baru
+const attachmentContainer = document.getElementById("atc-container");
+const gameContainer = document.getElementById('game-container');
+const atcContainer1 = document.getElementById('atc-con1');
+const atcContainer2 = document.getElementById('atc-con2');
 
 startGame(); // Memulai permainan saat halaman dimuat
 
@@ -156,16 +157,25 @@ function selectAnswer(e) {
 function showAttachmentOptions() {
   Swal.fire({
     icon: 'info',
-    title: 'Chosee Your Power Up !',
+    title: 'Choose Your Power Up!',
     text: 'The next question will have Power Up',
     showConfirmButton: false,
     timer: 2000
   });
-  attachmentContainer.classList.remove('none')
-  gameContainer.classList.add('none')
+  atcContainer1.classList.remove('active')
+  atcContainer2.classList.remove('active')
+  attachmentContainer.classList.remove('none');
+  gameContainer.classList.add('none');
 }
 
-function ApplyAttachmentScore() {
+async function ApplyAttachmentScore() {
+  // Tambahkan kelas 'active' untuk memulai animasi
+  atcContainer1.classList.add('active');
+
+  // Tunggu animasi selesai (sesuai dengan durasi animasi di CSS)
+  await new Promise(resolve => setTimeout(resolve, 2000)); // Pastikan durasi sesuai dengan CSS
+
+  // Lakukan tindakan setelah animasi selesai
   scoreMultiplier = 2;
   Swal.fire({
     icon: 'info',
@@ -174,11 +184,18 @@ function ApplyAttachmentScore() {
     showConfirmButton: false,
     timer: 2000
   });
-  attachmentContainer.classList.add('none')
-  gameContainer.classList.remove('none')
+  attachmentContainer.classList.add('none');
+  gameContainer.classList.remove('none');
 }
 
-function ApplyAttachmentTime() {
+async function ApplyAttachmentTime() {
+  // Tambahkan kelas 'active' untuk memulai animasi
+  atcContainer2.classList.add('active');
+
+  // Tunggu animasi selesai (sesuai dengan durasi animasi di CSS)
+  await new Promise(resolve => setTimeout(resolve, 2000)); // Pastikan durasi sesuai dengan CSS
+
+  // Lakukan tindakan setelah animasi selesai
   timeLeft += 30;
   timerElement.innerText = `Time: ${timeLeft}`;
   Swal.fire({
@@ -188,8 +205,8 @@ function ApplyAttachmentTime() {
     showConfirmButton: false,
     timer: 2000
   });
-  attachmentContainer.classList.add('none')
-  gameContainer.classList.remove('none')
+  attachmentContainer.classList.add('none');
+  gameContainer.classList.remove('none');
 }
 
 // Fungsi untuk mengakhiri permainan
