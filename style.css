@@ -56,7 +56,7 @@ body {
   transform: rotateY(0) translateY(0); /* Ensures initial state is properly set */
 }
 
-.flip-card:active .flip-card-inner {
+.flip-card.active .flip-card-inner {
   transform: rotateY(180deg) translateY(-50px);
 }
 
