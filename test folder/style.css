@@ -1,0 +1,409 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+:root {
+  --bg: #f9fffe;
+  --bg-card: #fdfdff;
+  --color: #292525;
+
+  --bg-ingame: #09111c;
+  --bg-nav: #0d1927;
+  --nav-content: #1e344c;
+}
+
+body {
+  background-color: var(--bg-ingame);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins";
+}
+
+.attechment-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 200px;
+  height: 250px;
+  perspective: 1000px;
+}
+
+.img-card {
+  width: 200px;
+  height: 250px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 1.5s;
+  transform-style: preserve-3d;
+  box-shadow: 0 5px 50px 0 rgb(209, 209, 209);
+  transform: rotateY(0) translateY(0); /* Ensures initial state is properly set */
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(540deg) translateY(-50px);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: var(--bg-card);
+  color: var(--color);
+}
+
+.flip-card-back {
+  background-color: var(--bg-card);
+  color: var(--color);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 5px 10px;
+  justify-content: center;
+  gap: 10px;
+  transform: rotateY(180deg);
+}
+
+.title-atc {
+  font-weight: 900;
+  font-size: 17px;
+}
+
+.desk-atc {
+  max-width: 150px;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.img-card-back {
+  width: 60px;
+  height: 60px;
+  object-position: center;
+  object-fit: cover;
+  border-radius: 100%;
+}
+
+.desk-card-back {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  padding: 10px 0px;
+  top: 0px;
+  left: 0;
+  right: 0;
+  background-color: var(--bg-nav);
+  color: white;
+}
+
+.bar-navbar {
+  height: 7px;
+  border-radius: 12px;
+  width: 200px;
+  background: white;
+}
+
+.nav-center {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+  padding-left: 80px;
+}
+
+.bar-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.img-nav {
+  width: 40px;
+  height: 40px;
+  object-position: center;
+  object-fit: cover;
+  border-radius: 100%;
+}
+
+.strike,
+.score,
+.soal,
+.timer {
+  font-weight: 800;
+  font-size: 15px;
+  background: var(--nav-content);
+  padding: 2px 15px;
+  border-radius: 12px;
+}
+
+.nav-left {
+  display: flex;
+  gap: 20px;
+}
+
+.main-game {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  gap: 100px;
+}
+
+#question-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game-container {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+#question {
+  font-weight: 800;
+  font-size: 30px;
+}
+
+.answerrr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.ch-answer-desk {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.btn-container .btn {
+  min-width: 280px;
+  min-height: 280px;
+  border: none;
+  color: white;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-container {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1200px;
+}
+
+.btn-1 {
+  background-color: rgb(209, 62, 62);
+}
+
+.btn-2 {
+  background-color: rgb(45, 160, 45);
+}
+.btn-3 {
+  background-color: rgb(53, 53, 175);
+}
+
+.btn-4 {
+  background-color: rgb(204, 204, 55);
+}
+
+
+
+
+
+
+
+
+
+
+
+/* NajStyle */
+body{
+  text-align:center;
+  background-color:#09111C;
+}
+/*space cuma buat ngasih.... space*/
+.space {
+  margin: 57px;
+}
+
+/*TOMBOLNYAHHHH RAHH*/
+.button, .bg {
+  position:relative;
+  display:inline-block;
+  margin: 20px;
+}
+
+@font-face {
+  font-family: 'doodle';
+  src: url('Blomberg-8MKKZ.otf');
+}
+
+.button a{
+  color:white;
+  font-family: 'doodle';
+  font-weight:bold;
+  font-size:36px;
+  text-align: center;
+  text-decoration:none;
+  background-color:#FFA12B;
+  display:block;
+  position:relative;
+  padding:10px 20px;
+  
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  text-shadow: 0px 1px 0px #000;
+  filter: dropshadow(color=#000, offx=0px, offy=1px);
+  
+  -webkit-box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #915100;
+  -moz-box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #e7b36f;
+  box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #DE4022;
+  
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 50px;
+}
+
+/*efek saat dipemcet mazzzz*/
+.button a:active{
+  top:10px;
+  background-color:#F78900;
+  
+  -webkit-box-shadow:inset 0 1px 0 #FFE5C4, inset 0 -3px 0 #915100;
+  -moz-box-shadow:inset 0 1px 0 #FFE5C4, inset 0 -3pxpx 0 #915100;
+  box-shadow:inset 0 1px 0 #FFE5C4, inset 0 -3px 0 #915100;
+}
+
+.button:after{
+  height:100%;
+  width:100%;
+  padding:4px;
+  position: absolute;
+  bottom:-15px;
+  left:-4px;
+  z-index:-1; 
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+/*lapisan doangs*/
+.bg-1 {
+  background-color: #0D1925;
+  border-radius: 70px;
+}
+
+.bg-2 {
+  background-color: #1E344C;
+  padding: 5vw 7vh;
+  border-radius: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*LEADERBORDS*/
+.item-group {
+  padding: 10px 0px 10px 0px;
+  display: flex;
+}
+
+.gambar, .rank, .skor, .name {
+  color: white;
+  font-family: 'doodle';
+  font-weight:bold;
+  font-size:25px;
+  text-align: left;
+  text-decoration:none;
+  background-color:#FFA12B;
+  display:block;
+  position:relative;
+  padding:30px 40px;
+  margin: 5px;
+
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  text-shadow: 0px 1px 0px #000;
+  filter: dropshadow(color=#000, offx=0px, offy=1px);
+  
+  -webkit-box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #915100;
+  -moz-box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #e7b36f;
+  box-shadow:inset 0 1px 0 #FFE5C4, 0 5px 0 #DE4022;
+  
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 50px;
+}
+
+.skor {
+  padding: 30px;
+  width: 280px;
+}
+
+.name {
+  padding: 30px;
+  width: 280px;
+}
+
+
+/*ACUHKAN BAGIAN INI. (BUAT SPACE DOANG)*/
+.ket-1 {
+  padding: 20px;
+}
+
+.ket-2 {
+  visibility: hidden;
+  padding: 38px;
+}
+
+.ket-3 {
+  padding: 20px;
+  width: 100px;
+}
+/*---------------------------------*/
+
+.gambar {
+  background-image: url(party.jpg);
+  background-size: cover;
+  background-position: center;
+}
