@@ -404,6 +404,11 @@ body {
   gap: 20px;
 }
 
+.border-b-1 {
+  padding-bottom: 20px;
+  border-bottom: 2px solid #0d1927;
+}
+
 .help-text {
   display: flex;
   flex-direction: column;
