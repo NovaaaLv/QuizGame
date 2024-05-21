@@ -1,6 +1,6 @@
 const questions = [
   {
-    question: "1. Berikut ini yang merupakan pengertian hak asasi manusia ....",
+    question: " Berikut ini yang merupakan pengertian hak asasi manusia ....",
     answers: [
       { text: "anugrah Tuhan yang Maha Esa sejak dalam kandungan bersifat universal", correct: true },
       { text: "anugrah Tuhan yang Maha Esa sejak anak anak sampai akhir hayat", correct: false },
@@ -10,7 +10,7 @@ const questions = [
     ]
   },
   {
-    question: "2. Dibawah ini merupakan macam-macam hak asasi manusia, kecuali ....",
+    question: " Dibawah ini merupakan macam-macam hak asasi manusia, kecuali ....",
     answers: [
       { text: "hak asasi pribadi", correct: false },
       { text: "hak asasi hukum", correct: false },
@@ -20,7 +20,7 @@ const questions = [
     ]
   },
   {
-    question: "3. Setiap warga negara berhak mendapat pendidikan sesuai pasal 31 ayat 1 UUD NRI Tahun 1945. Hal ini sesuai dengan nilai....",
+    question: " Setiap warga negara berhak mendapat pendidikan sesuai pasal 31 ayat 1 UUD NRI Tahun 1945. Hal ini sesuai dengan nilai....",
     answers: [
       { text: "nilai dasar", correct: false },
       { text: "nilai instrumental", correct: true },
@@ -30,7 +30,7 @@ const questions = [
     ]
   },
   {
-    question: "4. Berikut ini adalah jenis-jenis kasus pelanggaran HAM yang sifatnya ringan, yaitu ....",
+    question: " Berikut ini adalah jenis-jenis kasus pelanggaran HAM yang sifatnya ringan, yaitu ....",
     answers: [
       { text: "penggusuran populasi", correct: false },
       { text: "pelecehan anak", correct: false },
@@ -40,7 +40,7 @@ const questions = [
     ]
   },// Ghiyas Tsaqif
   {
-    question: "5. Pengambilan keputusan menurut demokrasi Pancasila lebih mengutamakan ....",
+    question: " Pengambilan keputusan menurut demokrasi Pancasila lebih mengutamakan ....",
     answers: [
       { text: "Kehendak pemimpin", correct: false },
       { text: "Voting/suara terbanyak", correct: false },
