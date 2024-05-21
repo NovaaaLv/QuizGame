@@ -50,60 +50,6 @@ const questions = [
     ]
   },
   {
-    question: "HTML Merupakan singkatan dari",
-    answers: [
-      { text: "Hyper Link Markup Language", correct: false },
-      { text: "Hyper Text Markup Language", correct: true },
-      { text: "Hyper Tool Markup Language", correct: false },
-      
-    ]
-  },
-  {
-    question: "Atribut alt pada tag <img> berfungsi untuk?",
-    answers: [
-      { text: "Menampilkan alternatif teks ketika gambar tidak bisa ditampilkan", correct: true },
-      { text: "Membuat gambar dengan animasi", correct: false },
-      { text: "Mengatur ukuran gambar", correct: false},
-      { text: "Mengatur jarak gambar dengan elemen lain", correct: false }
-    ]
-  },
-  {
-    question: "Elemen HTML untuk memutar video adalah",
-    answers: [
-      { text: "<video>", correct: true },
-      { text: "<input type='video'>", correct: false },
-      { text: "<media>", correct: false },
-      { text: "<canvas>", correct: false }
-    ]
-  },
-  {
-    question: "Elemen HTML untuk memutar suara adalah",
-    answers: [
-      { text: "<audio>", correct: true },
-      { text: "<sound>", correct: false },
-      { text: "<video>", correct: false },
-      { text: "<mp3>", correct: false }
-    ]
-  },
-  {
-    question: "Atribut yang digunakan pada field untuk membuat aturan field tersebut harus diisi adalah atribut",
-    answers: [
-      { text: "validate", correct: false },
-      { text: "required", correct: true },
-      { text: "name", correct: false },
-      { text: "value", correct: false }
-    ]
-  },
-  {
-    question: "Untuk membuat paragraf menggunakan tag?",
-    answers: [
-      { text: "<p>", correct: true },
-      { text: "<paragraf>", correct: false },
-      { text: "<i>", correct: false },
-      { text: "<italic>", correct: false }
-    ]
-  },
-  {
     question: "Fenita: Kamu harus menentukan sikap. Pilih aku atau dia, sekarang juga! Verri: Beri aku kesempatan sekali lagi…. Fenita: Tidak perlu basa-basi, kalau tidak aku yang memutuskan, titik! Penggalan dialog di atas menunjukkan drama sampai pada bagian ….",
     answers: [
       { text: "pemaparan", correct: false },
