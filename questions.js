@@ -6,7 +6,7 @@ const questions = [
       { text: "anugrah Tuhan yang Maha Esa sejak anak anak sampai akhir hayat", correct: false },
       { text: "anugrah Tuhan yang Maha Esa untuk orang orang tertentu saja", correct: false },
       { text: "anugrah Tuhan yang Maha Esa khusus untuk orang orang yang memiliki derajat", correct: false },
-      { text: "anugrah Tuhan yang Maha Esa hanya untuk manusia saja", correct: false }
+      
     ]
   },
   {
@@ -16,7 +16,7 @@ const questions = [
       { text: "hak asasi hukum", correct: false },
       { text: "hak asasi pemerintahan", correct: true },
       { text: "hak asasi sosial budaya", correct: false },
-      { text: "hak asasi tata cara peradilan dan perlindungan", correct: false }
+      
     ]
   },
   {
@@ -26,7 +26,7 @@ const questions = [
       { text: "nilai instrumental", correct: true },
       { text: "nilai praksis", correct: false },
       { text: "nilai dalam UU", correct: false },
-      { text: "nilai dalam UUD Tahun 1945", correct: false }
+     
     ]
   },
   {
@@ -36,7 +36,7 @@ const questions = [
       { text: "pelecehan anak", correct: false },
       { text: "pembunuhan seseorang", correct: false },
       { text: "fitnah", correct: true },
-      { text: "pembunuhan massal", correct: false }
+     
     ]
   },// Ghiyas Tsaqif
   {
@@ -46,7 +46,7 @@ const questions = [
       { text: "Voting/suara terbanyak", correct: false },
       { text: "Kepentingan golongan mayoritas", correct: false },
       { text: "Musyawarah untuk mufakat", correct: true },
-      { text: "Berkembangnya budaya", correct: false }
+      
     ]
   },
   {
@@ -55,7 +55,7 @@ const questions = [
       { text: "Hyper Link Markup Language", correct: false },
       { text: "Hyper Text Markup Language", correct: true },
       { text: "Hyper Tool Markup Language", correct: false },
-      { text: "Hyper Test Markup Language", correct: false }
+      
     ]
   },
   {
@@ -110,7 +110,7 @@ const questions = [
       { text: "konflik", correct: true },
       { text: "klimaks", correct: false },
       { text: "resolusi", correct: false },
-      { text: "penyelesaian", correct: false }
+   
     ]
   },
   {
@@ -120,7 +120,7 @@ const questions = [
       { text: "pembual", correct: false },
       { text: "pemberani", correct: false },
       { text: "sombong", correct: false },
-      { text: "tidak bertanggung jawab", correct: false }
+      
     ]
   },
   {
@@ -130,7 +130,7 @@ const questions = [
       { text: "(2)", correct: true },
       { text: "(3)", correct: false },
       { text: "(4)", correct: false },
-      { text: "(5)", correct: false }
+     
     ]
   },
   {
@@ -148,7 +148,6 @@ const questions = [
       { text: "Menimbang isi", correct: false },
       { text: "Merujuk", correct: false },
       { text: "Membahas", correct: false },
-      { text: "Mengkritik", correct: false },
       { text: "Mengungkapkan Kembali", correct: true }
     ]
   },
