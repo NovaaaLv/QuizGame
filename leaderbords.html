@@ -7,8 +7,11 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <section>
-      <div class="space">
+    <section class="quizzz-container">
+      <div class="">
+        <span class="heading-quizzz"> QUIZ LEADERBOARD </span>
+      </div>
+      <div class="">
         <div class="bg bg-1">
           <div class="bg bg-2">
             <div class="item-group">
@@ -19,6 +22,7 @@
               <div class="gambar ket-2"></div>
               <div class="skor ket-3">score</div>
             </div>
+            <!-- database -->
             <div class="item-group">
               <div class="rank">1</div>
               <div class="gambar"></div>
@@ -53,26 +57,7 @@
         </div>
       </div>
     </section>
-
-    <script src="">
-      const gameHistory = JSON.parse(localStorage.getItem("gameHistory"));
-
-      if (gameHistory && gameHistory.length > 0) {
-        const historyElement = document.getElementById("history");
-        let historyHTML = "<h1>Game History</h1>";
-        gameHistory.forEach((history) => {
-          historyHTML += `
-                    <div class="card">
-                        <p>Username: ${history.username}</p>
-                        <p>Score: ${history.score}</p>
-                    </div>
-                `;
-        });
-        historyElement.innerHTML = historyHTML;
-      } else {
-        const historyElement = document.getElementById("history");
-        historyElement.innerHTML = "<p>No game history available</p>";
-      }
-    </script>
+    <script src="script.js"></script>
+    <script src="questions.js"></script>
   </body>
 </html>

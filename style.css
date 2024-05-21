@@ -451,7 +451,6 @@ body {
   justify-content: center;
   margin-top: 20px;
   padding: 20px 30px;
-  width: auto;
 }
 
 .gambar,
@@ -481,4 +480,70 @@ body {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 50px;
+}
+
+.quizzz-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  width: 100;
+}
+
+.heading-quizzz {
+  font-size: 60px;
+  font-weight: 800;
+  color: white;
+  font-family: "Doodle";
+}
+
+.help-con-sec {
+  margin-top: 30px;
+}
+
+#end-game-button {
+  color: white;
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  font-weight: 900;
+  padding: 0 30px;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.end-btn-container {
+  width: 100%;
+  background-color: #1e344c;
+  margin-top: 50px;
+  padding: 20px 30px;
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+#end-game-button::before {
+  content: "";
+  rotate: -35deg;
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background-color: #0d1925;
+  top: 50%;
+  left: 50%;
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Menggeser elemen pseudo agar pusatnya sejajar dengan pusat tombol */
+  z-index: -1; /* Memberikan z-index lebih rendah untuk memastikan elemen pseudo berada di belakang teks */
+}
+
+.space-nv {
+  width: 100%;
+  height: 200px;
+  background-color: transparent;
 }

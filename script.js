@@ -210,35 +210,35 @@ async function ApplyAttachmentTime() {
 }
 
 function saveScore(score) {
-  fetch('http://localhost:3000/save-score', {
+  const scoreData = { score: score }; // Membuat objek data skor
+
+  fetch('http://localhost:3000/save-score', { // Pastikan URL sesuai dengan server yang berjalan
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ score: score }),
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(scoreData)
   })
     .then(response => response.text())
     .then(data => {
-      console.log(data);
       Swal.fire({
+        title: 'Score Saved Successfully!',
+        text: `Your score of ${score} has been saved.`,
         icon: 'success',
-        title: 'Score Saved!',
-        text: data,
-        showConfirmButton: false,
-        timer: 1500
+        confirmButtonText: 'OK'
+      }).then(() => {
+        window.location.href = 'menu.html'; // Alihkan ke halaman menu.html setelah menyimpan skor
       });
     })
-    .catch((error) => {
+    .catch(error => {
       console.error('Error:', error);
       Swal.fire({
+        title: 'Error!',
+        text: 'There was an error saving your score. Please try again.',
         icon: 'error',
-        title: 'Failed to Save Score',
-        text: 'There was an error saving your score. Please try again later.',
-        showConfirmButton: false,
-        timer: 1500
+        confirmButtonText: 'OK'
       });
     });
 }
+
 
 
 // Panggil saveScore ketika permainan selesai atau skor diperbarui
@@ -246,20 +246,6 @@ function endGame() {
   gameOver = true;
   clearInterval(timer);
   saveScore(score); // Simpan skor saat permainan selesai
-  Swal.fire({
-    title: timeLeft <= 0 ? 'Time\'s up!' : 'Game Ended',
-    text: 'Your score is ' + score,
-    icon: 'info',
-    showCancelButton: true,
-    confirmButtonText: 'Play Again',
-    cancelButtonText: 'Exit'
-  }).then((result) => {
-    if (result.isConfirmed) {
-      startGame();
-    } else if (result.dismiss === Swal.DismissReason.cancel) {
-      window.location.href = 'menu.html';
-    }
-  });
 }
 
 // Fungsi untuk mengacak array (digunakan untuk mengacak pertanyaan dan jawaban)

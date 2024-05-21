@@ -22,7 +22,7 @@ app.post('/save-score', (req, res) => {
         console.error('Error saving score:', err);
         res.status(500).send('Error saving score');
       } else {
-        console.log('Score saved successfully!', result); // Log ini akan menunjukkan bahwa query berhasil
+        console.log('Score saved successfully!', result);
         res.send('Score saved successfully!');
       }
     });
