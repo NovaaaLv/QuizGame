@@ -3,6 +3,8 @@ let score = 0; // Skor pemain
 let timer; // Menyimpan referensi interval timer
 let timeLeft = 120; // Waktu tersisa dalam detik
 let consecutiveCorrectAnswers = 0; // Menyimpan jumlah jawaban benar berturut-turut
+let scoreMultiplier = 1; // Pengali skor default
+let gameOver = false; // Menyimpan status permainan
 
 // Mengambil elemen dari DOM
 const questionElement = document.getElementById("question");
@@ -11,7 +13,10 @@ const scoreElement = document.getElementById("score");
 const timerElement = document.getElementById("timer");
 const endGameButton = document.getElementById("end-game-button");
 const questionCountElement = document.getElementById("question-count");
-const consecutiveCorrectElement = document.getElementById("consecutive-correct"); // Menambahkan elemen baru
+const consecutiveCorrectElement = document.getElementById
+  ("consecutive-correct"); // Menambahkan elemen baru
+const attachmentContainer = document.getElementById("atc-container")
+const gameContainer = document.getElementById('game-container')
 
 startGame(); // Memulai permainan saat halaman dimuat
 
@@ -22,6 +27,8 @@ function startGame() {
   score = 0; // Mengatur skor ke 0
   timeLeft = 120; // Mengatur waktu tersisa ke 120 detik
   consecutiveCorrectAnswers = 0; // Mengatur jumlah jawaban benar berturut-turut ke 0
+  scoreMultiplier = 1; // Reset pengali skor
+  gameOver = false; // Reset status permainan
   scoreElement.innerText = score; // Menampilkan skor
   timerElement.innerText = `Time: ${timeLeft}`; // Menampilkan waktu tersisa
   questionCountElement.innerText = `Question: ${currentQuestionIndex + 1}`; // Menampilkan jumlah soal yang sudah dikerjakan
@@ -43,7 +50,7 @@ function startTimer() {
   }, 1000); // Interval 1 detik
 }
 
-// Fungsi untuk menampilkan pertanyaan berikutnya
+// Fungsi untuk menampilkan pertanyaan berikut
 function setNextQuestion() {
   resetState(); // Menghapus tombol jawaban sebelumnya
   showQuestion(shuffle(questions)[currentQuestionIndex]); // Menampilkan pertanyaan acak
@@ -78,11 +85,13 @@ function resetState() {
 
 // Fungsi untuk menangani pilihan jawaban
 function selectAnswer(e) {
+  if (gameOver) return; // Jika permainan sudah berakhir, tidak melakukan apapun
+
   const selectedButton = e.target; // Mengambil tombol yang diklik
   const correct = selectedButton.dataset.correct === "true"; // Memeriksa apakah jawaban benar
 
   if (correct) { // Jika jawaban benar
-    score += 100; // Menambahkan skor
+    score += 100 * scoreMultiplier; // Menambahkan skor dengan pengali
     consecutiveCorrectAnswers++; // Menambahkan jumlah jawaban benar berturut-turut
     Swal.fire({ // Menampilkan pesan benar
       icon: 'success',
@@ -109,6 +118,14 @@ function selectAnswer(e) {
   consecutiveCorrectElement.innerText = `STRIKE: ${consecutiveCorrectAnswers}`; // Menampilkan jumlah jawaban benar berturut-turut
 
   currentQuestionIndex++; // Menaikkan indeks pertanyaan
+
+  // Cek jika indeks pertanyaan adalah kelipatan 5
+  if (currentQuestionIndex % 5 === 0) {
+    showAttachmentOptions(); // Menampilkan pilihan lampiran
+  } else {
+    scoreMultiplier = 1; // Reset pengali skor ke 1 jika bukan kelipatan 5
+  }
+
   if (currentQuestionIndex < questions.length) { // Jika masih ada pertanyaan
     setNextQuestion(); // Menampilkan pertanyaan berikutnya
   } else { // Jika tidak ada lagi pertanyaan
@@ -121,6 +138,7 @@ function selectAnswer(e) {
       confirmButtonText: 'Play Again',
       cancelButtonText: 'Exit'
     }).then((result) => {
+      gameOver = true; // Mengatur status permainan menjadi selesai
       if (result.isConfirmed) { // Jika pemain memilih untuk bermain lagi
         startGame(); // Memulai ulang permainan
       }
@@ -128,8 +146,104 @@ function selectAnswer(e) {
   }
 }
 
+// Fungsi untuk menampilkan pilihan lampiran
+function showAttachmentOptions() {
+  // Swal.fire({
+  //   title: 'Choose an Attachment',
+  //   text: 'Select one of the following options:',
+  //   input: 'radio',
+  //   inputOptions: {
+  //     scoreMultiplier: 'Double Points for Next Question',
+  //     pointProtection: 'Protect Your Points from Deduction',
+  //     timeExtension: 'Add 30 Seconds to Timer'
+  //   },
+  //   inputValidator: (value) => {
+  //     if (!value) {
+  //       return 'You need to choose something!'
+  //     }
+  //   },
+  //   showCancelButton: true,
+  //   confirmButtonText: 'Confirm'
+  // }).then((result) => {
+  //   if (result.isConfirmed) {
+  //     applyAttachment(result.value);
+  //   }
+  // });
+
+  attachmentContainer.classList.remove('none')
+  gameContainer.classList.add('none')
+}
+
+function ApplyAttachmentScore() {
+  scoreMultiplier = 2;
+  Swal.fire({
+    icon: 'info',
+    title: 'Score Multiplier Activated!',
+    text: 'The next question will have double points!',
+    showConfirmButton: false,
+    timer: 2000
+  });
+  attachmentContainer.classList.add('none')
+  gameContainer.classList.remove('none')
+}
+
+function ApplyAttachmentTime() {
+  timeLeft += 30;
+  timerElement.innerText = `Time: ${timeLeft}`;
+  Swal.fire({
+    icon: 'info',
+    title: 'Time Extension Activated!',
+    text: '30 seconds have been added to the timer!',
+    showConfirmButton: false,
+    timer: 2000
+  });
+  attachmentContainer.classList.add('none')
+  gameContainer.classList.remove('none')
+}
+
+// Fungsi untuk menerapkan lampiran
+// function applyAttachment(attachment) {
+//   switch (attachment) {
+//     case 'scoreMultiplier':
+//       scoreMultiplier = 2;
+//       Swal.fire({
+//         icon: 'info',
+//         title: 'Score Multiplier Activated!',
+//         text: 'The next question will have double points!',
+//         showConfirmButton: false,
+//         timer: 2000
+//       });
+//       break;
+//     case 'pointProtection':
+//       scoreMultiplier = 1; // Reset multiplier
+//       consecutiveCorrectAnswers = Math.max(consecutiveCorrectAnswers, 1); // Set minimal correct streak to 1
+//       Swal.fire({
+//         icon: 'info',
+//         title: 'Point Protection Activated!',
+//         text: 'Your points will not be deducted for the next question!',
+//         showConfirmButton: false,
+//         timer: 2000
+//       });
+//       break;
+//     case 'timeExtension':
+//       timeLeft += 30;
+//       timerElement.innerText = `Time: ${timeLeft}`;
+//       Swal.fire({
+//         icon: 'info',
+//         title: 'Time Extension Activated!',
+//         text: '30 seconds have been added to the timer!',
+//         showConfirmButton: false,
+//         timer: 2000
+//       });
+//       break;
+//     default:
+//       break;
+//   }
+// }
+
 // Fungsi untuk mengakhiri permainan
 function endGame() {
+  gameOver = true; // Mengatur status permainan menjadi selesai
   clearInterval(timer); // Menghentikan timer
   Swal.fire({ // Menampilkan pesan waktu habis atau permainan berakhir
     title: timeLeft <= 0 ? 'Time\'s up!' : 'Game Ended',
@@ -141,6 +255,8 @@ function endGame() {
   }).then((result) => {
     if (result.isConfirmed) { // Jika pemain memilih untuk bermain lagi
       startGame(); // Memulai ulang permainan
+    } else if (result.dismiss === Swal.DismissReason.cancel) { // Jika pemain memilih untuk keluar
+      window.location.href = 'menu.html'; // Alihkan ke halaman menu.html
     }
   });
 }
