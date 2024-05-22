@@ -1,245 +1,425 @@
 const questions = [
   {
-    question: " Berikut ini yang merupakan pengertian hak asasi manusia ....",
+    question: "Berikut ini yang merupakan pengertian hak asasi manusia ....",
     answers: [
       { text: "anugrah Tuhan yang Maha Esa sejak dalam kandungan bersifat universal", correct: true },
       { text: "anugrah Tuhan yang Maha Esa sejak anak anak sampai akhir hayat", correct: false },
       { text: "anugrah Tuhan yang Maha Esa untuk orang orang tertentu saja", correct: false },
       { text: "anugrah Tuhan yang Maha Esa khusus untuk orang orang yang memiliki derajat", correct: false },
-      
     ]
   },
   {
-    question: " Dibawah ini merupakan macam-macam hak asasi manusia, kecuali ....",
+    question: "Ibukota negara Indonesia adalah ....",
     answers: [
-      { text: "hak asasi pribadi", correct: false },
-      { text: "hak asasi hukum", correct: false },
-      { text: "hak asasi pemerintahan", correct: true },
-      { text: "hak asasi sosial budaya", correct: false },
-      
+      { text: "Jakarta", correct: true },
+      { text: "Surabaya", correct: false },
+      { text: "Bandung", correct: false },
+      { text: "Yogyakarta", correct: false },
     ]
   },
   {
-    question: " Setiap warga negara berhak mendapat pendidikan sesuai pasal 31 ayat 1 UUD NRI Tahun 1945. Hal ini sesuai dengan nilai....",
+    question: "Proklamasi kemerdekaan Indonesia dikumandangkan pada tanggal ....",
     answers: [
-      { text: "nilai dasar", correct: false },
-      { text: "nilai instrumental", correct: true },
-      { text: "nilai praksis", correct: false },
-      { text: "nilai dalam UU", correct: false },
-     
+      { text: "17 Agustus 1945", correct: true },
+      { text: "20 Mei 1908", correct: false },
+      { text: "1 Juni 1945", correct: false },
+      { text: "28 Oktober 1928", correct: false },
     ]
   },
   {
-    question: " Berikut ini adalah jenis-jenis kasus pelanggaran HAM yang sifatnya ringan, yaitu ....",
+    question: "Dasar negara Indonesia adalah ....",
     answers: [
-      { text: "penggusuran populasi", correct: false },
-      { text: "pelecehan anak", correct: false },
-      { text: "pembunuhan seseorang", correct: false },
-      { text: "fitnah", correct: true },
-     
-    ]
-  },// Ghiyas Tsaqif
-  {
-    question: " Pengambilan keputusan menurut demokrasi Pancasila lebih mengutamakan ....",
-    answers: [
-      { text: "Kehendak pemimpin", correct: false },
-      { text: "Voting/suara terbanyak", correct: false },
-      { text: "Kepentingan golongan mayoritas", correct: false },
-      { text: "Musyawarah untuk mufakat", correct: true },
-      
+      { text: "Pancasila", correct: true },
+      { text: "Undang-Undang Dasar 1945", correct: false },
+      { text: "Sumpah Pemuda", correct: false },
+      { text: "Bhineka Tunggal Ika", correct: false },
     ]
   },
   {
-    question: "Fenita: Kamu harus menentukan sikap. Pilih aku atau dia, sekarang juga! Verri: Beri aku kesempatan sekali lagi…. Fenita: Tidak perlu basa-basi, kalau tidak aku yang memutuskan, titik! Penggalan dialog di atas menunjukkan drama sampai pada bagian ….",
+    question: "Presiden pertama Republik Indonesia adalah ....",
     answers: [
-      { text: "pemaparan", correct: false },
-      { text: "konflik", correct: true },
-      { text: "klimaks", correct: false },
-      { text: "resolusi", correct: false },
-   
+      { text: "Soekarno", correct: true },
+      { text: "Soeharto", correct: false },
+      { text: "BJ Habibie", correct: false },
+      { text: "Megawati Soekarnoputri", correct: false },
     ]
   },
   {
-    question: "Setilawati: Pengecut! Sedikit diserang kritik orang, engkau hendak melarikan diri. Untuk menjaga nama supaya jangan merosot. Aku sudah maklum. Ishak: (Sambil menunjuk keluar) Pergi daripadaku. Engkau boleh memusuhi aku. Untuk cita-cita aku bersedia mengorbankan segalanya juga cintaku. Watak tokoh Ishak dalam penggalan drama di atas adalah ….",
+    question: "Gunung tertinggi di Indonesia adalah ....",
     answers: [
-      { text: "pemarah", correct: true },
-      { text: "pembual", correct: false },
-      { text: "pemberani", correct: false },
-      { text: "sombong", correct: false },
-      
+      { text: "Gunung Jaya Wijaya", correct: true },
+      { text: "Gunung Rinjani", correct: false },
+      { text: "Gunung Semeru", correct: false },
+      { text: "Gunung Kerinci", correct: false },
     ]
   },
   {
-    question: "Menentukan jenis kegiatan yang sesuai judul proposal. Contoh: Judul Proposal : Kunjungan ke Daerah Terkena Bencana Alam Jenis Kegiatan: 1. Pasar murah 2. Pengobatan gratis 3. Seminar Tanggap Bencana 4. Lomba memasak nonberas 5. Pelatihan penyelamatan diri Jenis kegiatan yang sesuai dengan judul proposal di atas ditandai dengan nomor ….",
+    question: "Pulau Bali terkenal dengan sebutan Pulau ....",
     answers: [
-      { text: "(1)", correct: false },
-      { text: "(2)", correct: true },
-      { text: "(3)", correct: false },
-      { text: "(4)", correct: false },
-     
+      { text: "Dewata", correct: true },
+      { text: "Seribu Pura", correct: false },
+      { text: "Surga", correct: false },
+      { text: "Hijau", correct: false },
     ]
   },
   {
-    question: "Menentukan sistematika penulisan proposal. Contoh: (1) Tujuan (2) Jenis Kegiatan (3) Latar belakang (4) Landasan Kegiatan (5) Penutup (6) Anggaran Biaya Sistematika penulisan proposal kegiatan yang tepat ditandai dengan nomor ….",
+    question: "Candi Borobudur terletak di provinsi ....",
     answers: [
-      { text: "(1), (3), (4), (2), (6), dan (5)", correct: false },
-      { text: "(3), (1), (4), (2), (6), dan (5)", correct: true },
-      { text: "(4), (2), (1), (6), (3), dan (5)", correct: false },
-      { text: "(4), (3), (2), (1), (6), dan (5)", correct: false }
+      { text: "Jawa Tengah", correct: true },
+      { text: "Jawa Timur", correct: false },
+      { text: "Jawa Barat", correct: false },
+      { text: "Yogyakarta", correct: false },
     ]
   },
   {
-    question: "Berikut ini yang bukan merupakan kegiatan dalam meresensi buku ialah ….",
+    question: "Lagu kebangsaan Indonesia adalah ....",
     answers: [
-      { text: "Menimbang isi", correct: false },
-      { text: "Merujuk", correct: false },
-      { text: "Membahas", correct: false },
-      { text: "Mengungkapkan Kembali", correct: true }
+      { text: "Indonesia Raya", correct: true },
+      { text: "Bagimu Negeri", correct: false },
+      { text: "Indonesia Pusaka", correct: false },
+      { text: "Satu Nusa Satu Bangsa", correct: false },
     ]
   },
   {
-    question: "Tujuan utama latihan kebugaran jasmani adalah ....",
+    question: "Sungai terpanjang di Indonesia adalah ....",
     answers: [
-      { text: "Meningkatkan fleksibilitas", correct: false },
-      { text: "Meningkatkan kecepatan", correct: false },
-      { text: "Membentuk postur tubuh", correct: false },
-      { text: "Meningkatkan kebugaran jasmani", correct: true }
+      { text: "Sungai Kapuas", correct: true },
+      { text: "Sungai Mahakam", correct: false },
+      { text: "Sungai Barito", correct: false },
+      { text: "Sungai Musi", correct: false },
     ]
   },
   {
-    question: "Gerakan yang dominan dilakukan dalam permainan sepak bola adalah . . . .",
+    question: "Danau terbesar di Indonesia adalah ....",
     answers: [
-      { text: "Menendang bola", correct: false },
-      { text: "Menahan bola", correct: false },
-      { text: "Menggiring bola", correct: true },
-      { text: "Menyundul bola", correct: false }
+      { text: "Danau Toba", correct: true },
+      { text: "Danau Maninjau", correct: false },
+      { text: "Danau Singkarak", correct: false },
+      { text: "Danau Sentani", correct: false },
     ]
   },
   {
-    question: "Dalam permainan bola voli, gerakan kedua kaki terbuka, lutut ditekuk, kedua lengan lurus dijulurkan ke depan bawah dan tangan satu sama lain dikaitkan atau berpegangan, ini merupakan gerakan ……",
+    question: "Indonesia merdeka dari penjajahan ....",
     answers: [
-      { text: "Servis", correct: false },
-      { text: "Passing Bawah", correct: true },
-      { text: "Smash", correct: false },
-      { text: "Passing Atas", correct: false }
+      { text: "Belanda", correct: true },
+      { text: "Jepang", correct: false },
+      { text: "Portugis", correct: false },
+      { text: "Inggris", correct: false },
     ]
   },
   {
-    question: "Melakukan teknik dasar gerakan dengan berporos pada satu kaki atau PIVOT dalam permainan bola basket dengan tujuan...",
+    question: "Pulau terluas di Indonesia adalah ....",
     answers: [
-      { text: "Mendekatkan bola ke keranjang lawan", correct: false },
-      { text: "Melindungi bola dari sergapan lawan", correct: false },
-      { text: "Menghindari serangan lawan", correct: true },
-      { text: "Memperagakan teknik bertahan", correct: false }
+      { text: "Kalimantan", correct: true },
+      { text: "Sumatera", correct: false },
+      { text: "Papua", correct: false },
+      { text: "Sulawesi", correct: false },
     ]
   },
   {
-    question: "Changes in the earth’s atmosphere took place because of the following except…",
+    question: "Kepulauan Raja Ampat terkenal karena ....",
     answers: [
-      { text: "The changing composition of gasses", correct: false },
-      { text: "The development of plant life", correct: false },
-      { text: "The earth’s original atmosphere", correct: true },
-      { text: "The process of photosynthesis", correct: false },
+      { text: "Keindahan bawah lautnya", correct: true },
+      { text: "Gunung berapinya", correct: false },
+      { text: "Candi-candi kuno", correct: false },
+      { text: "Hutan hujannya", correct: false },
     ]
   },
   {
-    question: "The topic of the passage is…",
+    question: "Ibukota provinsi Jawa Timur adalah ....",
     answers: [
-      { text: "The static atmosphere", correct: false },
-      { text: "The change in the atmosphere", correct: false },
-      { text: "The earth’s original atmosphere", correct: true },
-      { text: "The process of photosynthesis", correct: false },
+      { text: "Surabaya", correct: true },
+      { text: "Malang", correct: false },
+      { text: "Sidoarjo", correct: false },
+      { text: "Kediri", correct: false },
     ]
   },
   {
-    question: "Judul bacaan tiluhur nyaéta . . .",
+    question: "Kerajaan Hindu tertua di Indonesia adalah ....",
     answers: [
-      { text: "Raja Pajajaran", correct: false },
-      { text: "Prabu Siliwangi", correct: false },
-      { text: "Mundinglaya Dikusumah", correct: true },
-      { text: "Déwi Patmawati", correct: false }
+      { text: "Kutai", correct: true },
+      { text: "Majapahit", correct: false },
+      { text: "Sriwijaya", correct: false },
+      { text: "Mataram", correct: false },
     ]
   },
   {
-    question: "Kusabab sok ngawurukan ngaji, kang Arip sok disebut . . .",
+    question: "Kerajaan Islam pertama di Indonesia adalah ....",
     answers: [
-      { text: "Wali", correct: false },
-      { text: "Ustadz", correct: true },
-      { text: "Kepala SD", correct: false },
-      { text: "Nabi", correct: false }
+      { text: "Samudera Pasai", correct: true },
+      { text: "Demak", correct: false },
+      { text: "Majapahit", correct: false },
+      { text: "Mataram", correct: false },
     ]
   },
   {
-    question: "Saha Prabu Siliwangi téh . . .",
+    question: "Tokoh proklamator kemerdekaan Indonesia adalah ....",
     answers: [
-      { text: "Raja Pajajaran", correct: true },
-      { text: "Raja Singosari", correct: false },
-      { text: "Raja Muara Beres", correct: false },
-      { text: "Raja Kediri", correct: false }
+      { text: "Soekarno dan Mohammad Hatta", correct: true },
+      { text: "Soekarno dan Soeharto", correct: false },
+      { text: "Mohammad Hatta dan BJ Habibie", correct: false },
+      { text: "Soekarno dan BJ Habibie", correct: false },
     ]
   },
   {
-    question: "Jenenganana garwa Prabu Siliwangi nyaéta . . .",
+    question: "Perang Diponegoro terjadi pada tahun ....",
     answers: [
-      { text: "Déwi Padmawati", correct: true },
-      { text: "Déwi Sri", correct: false },
-      { text: "Déwi Banowati", correct: false },
-      { text: "Nyi Gambir Wangi", correct: false }
+      { text: "1825-1830", correct: true },
+      { text: "1815-1820", correct: false },
+      { text: "1830-1835", correct: false },
+      { text: "1840-1845", correct: false },
     ]
   },
   {
-    question: "Kacelik ka awan-awan …. ka jona pria. (kecap rundayan anu marenah pikeun ngeusian titik nyaéta)",
+    question: "Gamelan adalah alat musik tradisional dari ....",
     answers: [
-      { text: "Kalimpudan", correct: false },
-      { text: "Kahieuman", correct: false },
-      { text: "Kakoncara", correct: true },
-      { text: "Katutupan", correct: false }
+      { text: "Jawa", correct: true },
+      { text: "Sumatera", correct: false },
+      { text: "Kalimantan", correct: false },
+      { text: "Sulawesi", correct: false },
     ]
   },
   {
-    question: "Buah Semangka disebut buat kendi, sebab . . .",
+    question: "Lukisan terkenal karya Raden Saleh berjudul ....",
     answers: [
-      { text: "Bauna seungit", correct: false },
-      { text: "Sikina bisa dijien kuaci", correct: false },
-      { text: "Kandungan caina", correct: true },
-      { text: "koneng umyang", correct: false }
+      { text: "Penangkapan Pangeran Diponegoro", correct: true },
+      { text: "Pertempuran Laut Aru", correct: false },
+      { text: "Kapal Terbakar", correct: false },
+      { text: "Panen Padi", correct: false },
     ]
   },
   {
-    question: "Pupuh wiringrong diwangun ku . . .",
+    question: "Tari Pendet berasal dari daerah ....",
     answers: [
-      { text: "7", correct: false },
-      { text: "8", correct: false },
-      { text: "6", correct: true },
-      { text: "5", correct: false }
+      { text: "Bali", correct: true },
+      { text: "Jawa Barat", correct: false },
+      { text: "Sumatera Utara", correct: false },
+      { text: "Kalimantan Timur", correct: false },
     ]
   },
   {
-    question: "Mana kalimah nu ieusina nasihat ?",
+    question: "Prambanan adalah nama candi yang berada di provinsi ....",
     answers: [
-      { text: "“Cik ujang, Ema pangmeulikeun minyak saléter mah !”", correct: false },
-      { text: "“Urang hirup di dunia téh kudu akur jeung batur “", correct: true },
-      { text: "“Angga budak akuran ka batur”", correct: false },
-      { text: "“Budak éta mah musuhna mani loba”", correct: false }
+      { text: "Jawa Tengah", correct: true },
+      { text: "Jawa Timur", correct: false },
+      { text: "Jawa Barat", correct: false },
+      { text: "Yogyakarta", correct: false },
     ]
   },
   {
-    question: "Pupuh dihandap ieu ngabogaan watek",
-    text: "Pupuh Wirangrong\nDuh ibu hapunten abdi\nRumaos kadalon-dalon\nDisakola teu junun\nDiajarna bari ulin\nTungtungna kénging wiwirang\nTe nana ujian gagal",
+    question: "Batik adalah warisan budaya dari ....",
     answers: [
-      { text: "Kadalon-dalon", correct: false },
-      { text: "Sedih", correct: false },
-      { text: "Meunang wiwirang", correct: true },
-      { text: "Kaget éling", correct: false }
+      { text: "Indonesia", correct: true },
+      { text: "Malaysia", correct: false },
+      { text: "Thailand", correct: false },
+      { text: "Filipina", correct: false },
     ]
   },
   {
-    question: "Pemain bola basket mempunyai tugas pertahanan khusus menjaga satu orang menjaga lawan satu orang adalah ciri sistem pertahanan …",
+    question: "Puncak tertinggi di Pulau Jawa adalah Gunung ....",
     answers: [
-      { text: "Man to Man Marking", correct: true },
-      { text: "Defence", correct: false },
-      { text: "Zone Defence", correct: false },
-      { text: "Offense", correct: false }
+      { text: "Semeru", correct: true },
+      { text: "Merapi", correct: false },
+      { text: "Slamet", correct: false },
+      { text: "Lawu", correct: false },
     ]
-  }
+  },
+  {
+    question: "Lagu 'Rayuan Pulau Kelapa' diciptakan oleh ....",
+    answers: [
+      { text: "Ismail Marzuki", correct: true },
+      { text: "WR Supratman", correct: false },
+      { text: "C. Simanjuntak", correct: false },
+      { text: "Gombloh", correct: false },
+    ]
+  },
+  {
+    question: "Senjata tradisional dari Aceh adalah ....",
+    answers: [
+      { text: "Rencong", correct: true },
+      { text: "Keris", correct: false },
+      { text: "Mandau", correct: false },
+      { text: "Badik", correct: false },
+    ]
+  },
+  {
+    question: "Gunung Krakatau terletak di selat ....",
+    answers: [
+      { text: "Selat Sunda", correct: true },
+      { text: "Selat Bali", correct: false },
+      { text: "Selat Lombok", correct: false },
+      { text: "Selat Makassar", correct: false },
+    ]
+  },
+  {
+    question: "Bahasa Indonesia diresmikan sebagai bahasa nasional pada tahun ....",
+    answers: [
+      { text: "1928", correct: true },
+      { text: "1945", correct: false },
+      { text: "1965", correct: false },
+      { text: "1978", correct: false },
+    ]
+  },
+  {
+    question: "Bandara internasional Soekarno-Hatta terletak di kota ....",
+    answers: [
+      { text: "Tangerang", correct: true },
+      { text: "Jakarta", correct: false },
+      { text: "Bekasi", correct: false },
+      { text: "Depok", correct: false },
+    ]
+  },
+  {
+    question: "Hewan komodo hanya ditemukan di pulau ....",
+    answers: [
+      { text: "Komodo", correct: true },
+      { text: "Bali", correct: false },
+      { text: "Sumatera", correct: false },
+      { text: "Jawa", correct: false },
+    ]
+  },
+  {
+    question: "Tari Kecak berasal dari daerah ....",
+    answers: [
+      { text: "Bali", correct: true },
+      { text: "Jawa Tengah", correct: false },
+      { text: "Jawa Timur", correct: false },
+      { text: "Sumatera Barat", correct: false },
+    ]
+  },
+  {
+    question: "Ibukota provinsi Sulawesi Selatan adalah ....",
+    answers: [
+      { text: "Makassar", correct: true },
+      { text: "Manado", correct: false },
+      { text: "Palu", correct: false },
+      { text: "Kendari", correct: false },
+    ]
+  },
+  {
+    question: "Binatang yang menjadi lambang negara Indonesia adalah ....",
+    answers: [
+      { text: "Garuda", correct: true },
+      { text: "Harimau", correct: false },
+      { text: "Gajah", correct: false },
+      { text: "Komodo", correct: false },
+    ]
+  },
+  {
+    question: "Tari Saman berasal dari daerah ....",
+    answers: [
+      { text: "Aceh", correct: true },
+      { text: "Bali", correct: false },
+      { text: "Papua", correct: false },
+      { text: "Jawa Barat", correct: false },
+    ]
+  },
+  {
+    question: "Wayang kulit adalah kesenian tradisional dari daerah ....",
+    answers: [
+      { text: "Jawa", correct: true },
+      { text: "Bali", correct: false },
+      { text: "Sumatera", correct: false },
+      { text: "Sulawesi", correct: false },
+    ]
+  },
+  {
+    question: "Semboyan Bhinneka Tunggal Ika berarti ....",
+    answers: [
+      { text: "Berbeda-beda tetapi tetap satu", correct: true },
+      { text: "Bersatu kita teguh", correct: false },
+      { text: "Sekali merdeka tetap merdeka", correct: false },
+      { text: "Lebih baik mati daripada dijajah", correct: false },
+    ]
+  },
+  {
+    question: "Lambang negara Indonesia adalah ....",
+    answers: [
+      { text: "Garuda Pancasila", correct: true },
+      { text: "Bendera Merah Putih", correct: false },
+      { text: "Bhineka Tunggal Ika", correct: false },
+      { text: "Burung Cenderawasih", correct: false },
+    ]
+  },
+  {
+    question: "Candi Prambanan adalah candi peninggalan agama ....",
+    answers: [
+      { text: "Hindu", correct: true },
+      { text: "Buddha", correct: false },
+      { text: "Islam", correct: false },
+      { text: "Kristen", correct: false },
+    ]
+  },
+  {
+    question: "Pahlawan nasional yang terkenal dengan sebutan 'Bung Tomo' berasal dari kota ....",
+    answers: [
+      { text: "Surabaya", correct: true },
+      { text: "Jakarta", correct: false },
+      { text: "Bandung", correct: false },
+      { text: "Medan", correct: false },
+    ]
+  },
+  {
+    question: "Makanan tradisional dari Padang yang terkenal adalah ....",
+    answers: [
+      { text: "Rendang", correct: true },
+      { text: "Gudeg", correct: false },
+      { text: "Pempek", correct: false },
+      { text: "Sate Lilit", correct: false },
+    ]
+  },
+  {
+    question: "Tari Jaipong berasal dari daerah ....",
+    answers: [
+      { text: "Jawa Barat", correct: true },
+      { text: "Jawa Tengah", correct: false },
+      { text: "Sumatera Utara", correct: false },
+      { text: "Kalimantan Timur", correct: false },
+    ]
+  },
+  {
+    question: "Ibukota negara Jepang adalah ....",
+    answers: [
+      { text: "Tokyo", correct: true },
+      { text: "Osaka", correct: false },
+      { text: "Nagoya", correct: false },
+      { text: "Kyoto", correct: false },
+    ]
+  },
+  {
+    question: "Nama resmi negara Thailand adalah ....",
+    answers: [
+      { text: "Kerajaan Thailand", correct: true },
+      { text: "Republik Thailand", correct: false },
+      { text: "Negara Thai", correct: false },
+      { text: "Federasi Thai", correct: false },
+    ]
+  },
+  {
+    question: "Ibukota negara Australia adalah ....",
+    answers: [
+      { text: "Canberra", correct: true },
+      { text: "Sydney", correct: false },
+      { text: "Melbourne", correct: false },
+      { text: "Perth", correct: false },
+    ]
+  },
+  {
+    question: "Penemu benua Amerika adalah ....",
+    answers: [
+      { text: "Christopher Columbus", correct: true },
+      { text: "Vasco da Gama", correct: false },
+      { text: "Marco Polo", correct: false },
+      { text: "Ferdinand Magellan", correct: false },
+    ]
+  },
+  {
+    question: "Negara dengan jumlah penduduk terbanyak di dunia adalah ....",
+    answers: [
+      { text: "Cina", correct: true },
+      { text: "India", correct: false },
+      { text: "Amerika Serikat", correct: false },
+      { text: "Indonesia", correct: false },
+    ]
+  },
 ];
