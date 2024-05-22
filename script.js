@@ -146,7 +146,7 @@ function selectAnswer(e) {
         startGame(); // Memulai ulang permainan
       }
       else if (result.dismiss === Swal.DismissReason.cancel) { // Jika pemain memilih untuk keluar
-        window.location.href = 'index.html'; // Alihkan ke halaman menu.html
+        window.location.href = 'index.html';
       }
     });
   }
@@ -242,7 +242,19 @@ function saveScore(score) {
 function endGame() {
   gameOver = true;
   clearInterval(timer);
-  saveScore(score); // Simpan skor saat permainan selesai
+  toMenu();
+  // saveScore(score); // Simpan skor saat permainan selesai
+}
+
+function toMenu() {
+  Swal.fire({
+    title: 'Score Saved Successfully!',
+    text: `Your score of ${score} has been saved.`,
+    icon: 'success',
+    confirmButtonText: 'OK'
+  }).then(() => {
+    window.location.href = 'index.html'; // Alihkan ke halaman menu.html setelah menyimpan skor
+  });
 }
 
 // Fungsi untuk mengacak array (digunakan untuk mengacak pertanyaan dan jawaban)
