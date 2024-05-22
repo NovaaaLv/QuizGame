@@ -31,9 +31,9 @@ function startGame() {
   scoreMultiplier = 1; // Reset pengali skor
   gameOver = false; // Reset status permainan
   scoreElement.innerText = score; // Menampilkan skor
-  timerElement.innerText = `Time: {timeLeft}`; // Menampilkan waktu tersisa
-  questionCountElement.innerText = `Question: {currentQuestionIndex + 1}`; // Menampilkan jumlah soal yang sudah dikerjakan
-  consecutiveCorrectElement.innerText = `STRIKE: {consecutiveCorrectAnswers}`; // Menampilkan jumlah jawaban benar berturut-turut
+  timerElement.innerText = `Time: ${timeLeft}`; // Menampilkan waktu tersisa
+  questionCountElement.innerText = `Question: ${currentQuestionIndex + 1}`; // Menampilkan jumlah soal yang sudah dikerjakan
+  consecutiveCorrectElement.innerText = `STRIKE: ${consecutiveCorrectAnswers}`; // Menampilkan jumlah jawaban benar berturut-turut
   currentQuestionIndex = 0; // Mengatur indeks pertanyaan ke 0
   setNextQuestion(); // Menampilkan pertanyaan berikutnya
   startTimer(); // Memulai timer
@@ -79,7 +79,6 @@ function showQuestion(question) {
     answerButtonsElement.appendChild(button); // Menambahkan tombol ke elemen jawaban
   });
 }
-
 
 // Fungsi untuk menghapus tombol jawaban sebelumnya
 function resetState() {
@@ -153,11 +152,6 @@ function selectAnswer(e) {
   }
 }
 
-
-for (let error = 0; error < array.length; error++) {
-  const element = array[error];
-  console.log(error + "ini  adalah buk ahahahahaha")
-}
 // Fungsi untuk menampilkan pilihan lampiran
 function showAttachmentOptions() {
   Swal.fire({
@@ -243,8 +237,6 @@ function saveScore(score) {
       });
     });
 }
-
-
 
 // Panggil saveScore ketika permainan selesai atau skor diperbarui
 function endGame() {

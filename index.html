@@ -48,7 +48,7 @@
       </div>
     </section>
     <div class="space-nv"></div>
-    <div class="end-btn-container">
+    <div class="end-btn-container" style="z-index: 30">
       <button id="end-game-button">End Game</button>
     </div>
 
@@ -85,6 +85,31 @@
         </div>
       </div>
     </div>
+
+    <section class="username none">
+      <div class="space">
+        <div class="bg bg-1">
+          <div class="bg bg-2">
+            <div class="container">
+              <div class="brand-logo"></div>
+              <div class="brand-title"></div>
+              <form action="script.js" method="post" id="username_form">
+                <div class="inputs">
+                  <input
+                    type="email"
+                    placeholder="enter your name"
+                    id="usr_inp"
+                  />
+                  <div class="button">
+                    <button type="submit">confirm</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- script -->
     <script src="questions.js"></script>

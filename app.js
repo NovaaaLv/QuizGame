@@ -11,9 +11,8 @@ app.use(cors({
   origin: 'http://127.0.0.1:5500', // Atau '*' untuk memperbolehkan akses dari semua asal
 }));
 
-
 // Endpoint untuk menyimpan skor
-app.post('/save-score', (req, res) => {
+app.post('/save+score', (req, res) => {
   const { score } = req.body;
   if (typeof score === 'number') {
     const query = 'INSERT INTO quiz (score) VALUES (?)';
