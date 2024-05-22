@@ -289,7 +289,7 @@ body {
 
   -webkit-box-shadow: inset 0 1px 0 #ffe5c4, 0 10px 0 #915100;
   -moz-box-shadow: inset 0 1px 0 #ffe5c4, 0 10px 0 #e7b36f;
-  box-shadow: inset 0 1px 0 #ffe5c4, 0 10px 0 #de4022;
+  box-shadow: inset 0 1px 0 #ffe5c4, 0 7px 0 #de4022;
 
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -340,6 +340,11 @@ body {
 @media screen and (max-width: 780px) {
   .bar1 {
     display: none;
+  }
+  .gambar, .skor, .rank, .name, .ket-1, .ket-2, .ket-3 {
+    width: 1px;
+    height: 1px;
+    font-size: 1px;
   }
 }
 
