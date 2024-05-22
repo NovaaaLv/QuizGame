@@ -487,3 +487,24 @@ body {
   -moz-border-radius: 5px;
   border-radius: 50px;
 }
+
+/*PLAYER NAME INPUT*/
+label, input {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  font-family: doodle;
+}
+
+input {
+  text-align: center;
+  padding: 10px;
+  padding-left: 10px;
+  height: 55px;
+  width: 400px;
+  font-size: 20px;
+  border-radius: 50px;
+}
