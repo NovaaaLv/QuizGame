@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="nav-left">
+          <span class="soal" id="question-count">1/20</span>
+          <span class="timer" id="timer">Time: 1200</span>
+        </div>
+        <div class="nav-center">
+          <img src="assets/profile.png" class="img-nav" />
+          <div class="bar-container">
+            <div class="bar-navbar bar1"></div>
+            <div class="bar-navbar bar2"></div>
+          </div>
+          <span class="strike" id="consecutive-correct"
+            >STRIKE :
+            <span class="strike-indx" id="strike-score">20</span></span
+          >
+        </div>
+        <div id="score-container">
+          <span class="score">Score <span id="score">0</span></span>
+        </div>
+      </nav>
+    </header>
+
+    <section class="game-container" id="game-container">
+      <div class="main-game">
+        <div id="question-container">
+          <span id="question"></span>
+        </div>
+        <div class="answerrr">
+          <span class="ch-answer-desk">Pilih Jawaban Yang Benar</span>
+          <div id="answer-buttons" class="btn-container">
+            <button class="btn btn1" id="answer1"></button>
+            <button class="btn btn2" id="answer2"></button>
+            <button class="btn btn3" id="answer3"></button>
+            <button class="btn btn4" id="answer4"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="space-nv"></div>
+    <div class="end-btn-container" style="z-index: 30">
+      <button id="end-game-button">End Game</button>
+    </div>
+
+    <div class="attechment-container none" id="atc-container">
+      <div class="flip-card" onclick="ApplyAttachmentScore()" id="atc-con1">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="assets/atc.png" alt="" class="img-card" />
+          </div>
+          <div class="flip-card-back">
+            <img src="assets/x2.png" alt="" class="img-card-back" />
+            <div class="desk-card-back">
+              <span class="title-atc">SCORE 2X !</span>
+              <span class="desk-atc"
+                >Mengkalikan Score 2 Kali Lipat Pada Pertanyaan Berikutnya</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card" onclick="ApplyAttachmentTime()" id="atc-con2">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="assets/atc.png" alt="" class="img-card" />
+          </div>
+          <div class="flip-card-back">
+            <img src="assets/waktu.png" alt="" class="img-card-back" />
+            <div class="desk-card-back">
+              <span class="title-atc">Tambah Waktu !</span>
+              <span class="desk-atc">Menambahkan waktu 30 detik</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="username none">
+      <div class="space">
+        <div class="bg bg-1">
+          <div class="bg bg-2">
+            <div class="container">
+              <div class="brand-logo"></div>
+              <div class="brand-title"></div>
+              <form action="script.js" method="post" id="username_form">
+                <div class="inputs">
+                  <input
+                    type="email"
+                    placeholder="enter your name"
+                    id="usr_inp"
+                  />
+                  <div class="button">
+                    <button type="submit">confirm</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+      <audio src="bee.mp3"></audio>
+
+    <!-- script -->
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

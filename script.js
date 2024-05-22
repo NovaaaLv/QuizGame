@@ -31,9 +31,9 @@ function startGame() {
   scoreMultiplier = 1; // Reset pengali skor
   gameOver = false; // Reset status permainan
   scoreElement.innerText = score; // Menampilkan skor
-  timerElement.innerText = `Time: {timeLeft}`; // Menampilkan waktu tersisa
-  questionCountElement.innerText = `Question: {currentQuestionIndex + 1}`; // Menampilkan jumlah soal yang sudah dikerjakan
-  consecutiveCorrectElement.innerText = `STRIKE: {consecutiveCorrectAnswers}`; // Menampilkan jumlah jawaban benar berturut-turut
+  timerElement.innerText = `Time: ${timeLeft}`; // Menampilkan waktu tersisa
+  questionCountElement.innerText = `Question: ${currentQuestionIndex + 1}`; // Menampilkan jumlah soal yang sudah dikerjakan
+  consecutiveCorrectElement.innerText = `STRIKE: ${consecutiveCorrectAnswers}`; // Menampilkan jumlah jawaban benar berturut-turut
   currentQuestionIndex = 0; // Mengatur indeks pertanyaan ke 0
   setNextQuestion(); // Menampilkan pertanyaan berikutnya
   startTimer(); // Memulai timer
@@ -79,7 +79,6 @@ function showQuestion(question) {
     answerButtonsElement.appendChild(button); // Menambahkan tombol ke elemen jawaban
   });
 }
-
 
 // Fungsi untuk menghapus tombol jawaban sebelumnya
 function resetState() {
@@ -147,17 +146,12 @@ function selectAnswer(e) {
         startGame(); // Memulai ulang permainan
       }
       else if (result.dismiss === Swal.DismissReason.cancel) { // Jika pemain memilih untuk keluar
-        window.location.href = 'menu.html'; // Alihkan ke halaman menu.html
+        window.location.href = 'index.html'; // Alihkan ke halaman menu.html
       }
     });
   }
 }
 
-
-for (let error = 0; error < array.length; error++) {
-  const element = array[error];
-  console.log(error + "ini  adalah buk ahahahahaha")
-}
 // Fungsi untuk menampilkan pilihan lampiran
 function showAttachmentOptions() {
   Swal.fire({
@@ -214,24 +208,41 @@ async function ApplyAttachmentTime() {
   gameContainer.classList.remove('none');
 }
 
-// Fungsi untuk mengakhiri permainan
+function saveScore(score) {
+  const scoreData = { score: score }; // Membuat objek data skor
+
+  fetch('http://localhost:3000/save-score', { // Pastikan URL sesuai dengan server yang berjalan
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(scoreData)
+  })
+    .then(response => response.text())
+    .then(data => {
+      Swal.fire({
+        title: 'Score Saved Successfully!',
+        text: `Your score of ${score} has been saved.`,
+        icon: 'success',
+        confirmButtonText: 'OK'
+      }).then(() => {
+        window.location.href = 'index.html'; // Alihkan ke halaman menu.html setelah menyimpan skor
+      });
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      Swal.fire({
+        title: 'Error!',
+        text: 'There was an error saving your score. Please try again.',
+        icon: 'error',
+        confirmButtonText: 'OK'
+      });
+    });
+}
+
+// Panggil saveScore ketika permainan selesai atau skor diperbarui
 function endGame() {
-  gameOver = true; // Mengatur status permainan menjadi selesai
-  clearInterval(timer); // Menghentikan timer
-  Swal.fire({ // Menampilkan pesan waktu habis atau permainan berakhir
-    title: timeLeft <= 0 ? 'Time\'s up!' : 'Game Ended',
-    text: 'Your score is ' + score,
-    icon: 'info',
-    showCancelButton: true,
-    confirmButtonText: 'Play Again',
-    cancelButtonText: 'Exit'
-  }).then((result) => {
-    if (result.isConfirmed) { // Jika pemain memilih untuk bermain lagi
-      startGame(); // Memulai ulang permainan
-    } else if (result.dismiss === Swal.DismissReason.cancel) { // Jika pemain memilih untuk keluar
-      window.location.href = 'menu.html'; // Alihkan ke halaman menu.html
-    }
-  });
+  gameOver = true;
+  clearInterval(timer);
+  saveScore(score); // Simpan skor saat permainan selesai
 }
 
 // Fungsi untuk mengacak array (digunakan untuk mengacak pertanyaan dan jawaban)
